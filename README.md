@@ -6,15 +6,9 @@
 
 # Usage
 
-The basic usage is:
+It will parse css files in the current directory to build a file named "app.min.css".
 
-```
-docker run --rm -it -u $(id -u):$(id -g) -v $(pwd):/workspace metal3d/pleeease
-```
-
-I will parse css files in the current directory to build a file named "app.min.css".
-
-As the default command line is "pleeease-cli", you can give options and arguments:
+As the default command line is "pleeease", you can give options and arguments (compile, watch...):
 
 ```
 docker run --rm -it -u $(id -u):$(id -g) -v $(pwd):/workspace metal3d/pleeease \
