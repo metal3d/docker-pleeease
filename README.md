@@ -21,7 +21,7 @@ docker run --rm -it -v $(pwd):/workspace metal3d/pleeease src/*.css -t my.file.c
 The image provides "pleeease-watch", so you can do
 
 ```
-docker run --rm -it -v $(pwd):/workspace metal3d/pleeease pleeease-wath css/src -t css/app.min.css
+docker run --rm -it -v $(pwd):/workspace metal3d/pleeease pleeease-watch css/src -t css/app.min.css
 ```
 
 If you set pleeaserc file and that this file resides in the current directory (that is mounted as volume), you can provide some options. Create a .pleeeaserc file containing: 
