@@ -9,7 +9,7 @@
 The basic usage is:
 
 ```
-docker run --rm -it -v $(pwd):/workspace metal3d/pleeease
+docker run --rm -it -u $(id -u):$(id -g) -v $(pwd):/workspace metal3d/pleeease
 ```
 
 I will parse css files in the current directory to build a file named "app.min.css".
@@ -17,14 +17,18 @@ I will parse css files in the current directory to build a file named "app.min.c
 As the default command line is "pleeease-cli", you can give options and arguments:
 
 ```
-docker run --rm -it -v $(pwd):/workspace metal3d/pleeease compile src/*.css -t my.file.css
+docker run --rm -it -u $(id -u):$(id -g) -v $(pwd):/workspace metal3d/pleeease \
+    compile src/*.css -t my.file.css
 ```
 
 You may "watch" file changes to compile "on the fly":
 
 ```
-docker run --rm -it -v $(pwd):/workspace metal3d/pleeease watch css/src -t css/app.min.css
+docker run --rm -it -u $(id -u):$(id -g) -v $(pwd):/workspace metal3d/pleeease \
+    watch css/src -t css/app.min.css
 ```
+
+Keep in mind to set "-u" option to write files as you current user, and not as "root" user.
 
 If you set pleeaserc file and that this file resides in the current directory (that is mounted as volume), you can provide some options. Create a .pleeeaserc file containing: 
 
@@ -47,7 +51,7 @@ pleeease:
   image: metal3d/pleeease
   volumes:
   - ./:/workspace
-  cmd: pleeease-watch css/src -t css/app.min.css
+  cmd: watch css/src -t css/app.min.css
   user: 1000:1000
 ```
 
