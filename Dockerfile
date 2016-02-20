@@ -9,4 +9,4 @@ RUN set -ex;                                   \
     npm cache clean;                           \
     rm -rf /var/cache/apk/* /tmp/npm*;
 
-CMD ["pleeease-cli"]
+CMD ["pleeease"]

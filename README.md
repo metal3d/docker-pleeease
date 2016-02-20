@@ -17,13 +17,13 @@ I will parse css files in the current directory to build a file named "app.min.c
 As the default command line is "pleeease-cli", you can give options and arguments:
 
 ```
-docker run --rm -it -v $(pwd):/workspace metal3d/pleeease src/*.css -t my.file.css
+docker run --rm -it -v $(pwd):/workspace metal3d/pleeease compile src/*.css -t my.file.css
 ```
 
-The image provides "pleeease-watch", so you can do
+You may "watch" file changes to compile "on the fly":
 
 ```
-docker run --rm -it -v $(pwd):/workspace metal3d/pleeease pleeease-watch css/src -t css/app.min.css
+docker run --rm -it -v $(pwd):/workspace metal3d/pleeease watch css/src -t css/app.min.css
 ```
 
 If you set pleeaserc file and that this file resides in the current directory (that is mounted as volume), you can provide some options. Create a .pleeeaserc file containing: 
@@ -33,6 +33,7 @@ If you set pleeaserc file and that this file resides in the current directory (t
     "less" : true
 }
 ```
+
 And now, pleeease can process "less" syntax.
 
 Please see: [pleeease documentation](http://pleeease.io/docs/)
