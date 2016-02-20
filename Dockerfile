@@ -6,6 +6,7 @@ RUN set -ex;                                   \
     apk add --update nodejs python build-base; \
     npm install -g pleeease-cli;               \
     apk del python build-base;                 \
-    rm -rf /var/cache/apk/*;
+    npm cache clean;                           \
+    rm -rf /var/cache/apk/* /tmp/npm*;
 
 CMD ["pleeease-cli"]
