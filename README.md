@@ -1,5 +1,7 @@
 # Docker-pleeease
 
+[![](https://badge.imagelayers.io/metal3d/pleeease:latest.svg)](https://imagelayers.io/?images=metal3d/pleeease:latest 'Get your own badge on imagelayers.io')
+
 [pleeease](http://pleeease.io/) CSS, SAAS, LESS compiler in a docker image.
 
 # Usage
