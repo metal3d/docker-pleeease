@@ -5,7 +5,7 @@ WORKDIR /workspace
 RUN set -ex;                                   \ 
     apk add --update nodejs python build-base; \
     npm install -g pleeease-cli;               \
-    apk del python build-base;                 \
+    apk del --purge python build-base;         \
     npm cache clean;                           \
     rm -rf /var/cache/apk/* /tmp/npm*;
 
